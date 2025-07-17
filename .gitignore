@@ -1,0 +1,21 @@
+# Hugo build directories
+/public
+/resources
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Temporary files
+tmp/
+temp/
