@@ -79,5 +79,89 @@
     main table {
       margin: 1rem 0;
     }
+
+    /* Navigation button styling */
+    .nav-button {
+      text-decoration: none !important;
+      color: var(--base) !important;
+    }
+    
+    .nav-button:link,
+    .nav-button:visited,
+    .nav-button:hover,
+    .nav-button:focus,
+    .nav-button:active {
+      text-decoration: none !important;
+      color: var(--base) !important;
+      outline: none;
+    }
+    
+    .nav-button button {
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      color: var(--base) !important;
+    }
+    
+    .nav-button button:link,
+    .nav-button button:visited,
+    .nav-button button:hover,
+    .nav-button button:focus {
+      color: var(--base) !important;
+      text-decoration: none !important;
+      outline: none !important;
+      border: none !important;
+    }
+    
+    .nav-button button:active {
+      color: var(--text) !important;
+      text-decoration: none !important;
+      outline: none !important;
+      border: none !important;
+    }
+    
+    .nav-button button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-button button:active {
+      transform: translateY(0px);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Fix text selection colors for better readability */
+    ::selection {
+      background-color: var(--foreground1);
+      color: var(--background0);
+    }
+    
+    ::-moz-selection {
+      background-color: var(--foreground1);
+      color: var(--background0);
+    }
+    
+    /* Ensure button text color stays identical on hover/focus */
+    .nav-button button {
+      --original-color: currentColor;
+    }
+    
+    .nav-button button:hover,
+    .nav-button button:focus {
+      color: var(--original-color) !important;
+    }
+    
+    /* More specific overrides for webtui button variants */
+    .nav-button button[variant-]:hover,
+    .nav-button button[variant-]:focus {
+      color: var(--base) !important;
+      background-color: inherit !important;
+    }
+    
+    .nav-button button[variant-]:active {
+      color: var(--text) !important;
+      background-color: inherit !important;
+    }
   </style>
 </head>

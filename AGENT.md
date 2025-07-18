@@ -74,7 +74,47 @@ article pre, main pre { margin: 1rem 0; }
 - Uses `data-webtui-theme="catppuccin-mocha"` on `<html>` tag
 - Box styling: `box-="round"`, `box-="double round"`
 - Badges: `is-="badge" variant-="info|warning|primary|secondary"`
-- CSS custom properties: `--background0`, `--foreground0`, etc.
+
+### Available Catppuccin CSS Variables
+```css
+/* Accent Colors */
+--rosewater: #f5e0dc;
+--flamingo: #f2cdcd;
+--pink: #f5c2e7;
+--mauve: #cba6f7;
+--red: #f38ba8;
+--maroon: #eba0ac;
+--peach: #fab387;
+--yellow: #f9e2af;
+--green: #a6e3a1;
+--teal: #94e2d5;
+--sky: #89dceb;
+--sapphire: #74c7ec;
+--blue: #89b4fa;
+--lavender: #b4befe;
+
+/* Background / Foreground Colors */
+--text: #cdd6f4;
+--subtext1: #bac2de;
+--subtext0: #a6adc8;
+--overlay2: #9399b2;
+--overlay1: #7f849c;
+--overlay0: #6c7086;
+--surface2: #585b70;
+--surface1: #45475a;
+--surface0: #313244;
+--base: #1e1e2e;
+--mantle: #181825;
+--crust: #11111b;
+```
+
+**Usage Examples**:
+- `color: var(--text)` - Main text color
+- `background-color: var(--base)` - Main background
+- `border-color: var(--surface0)` - Subtle borders
+- `--box-border-color: var(--blue)` - Custom webtui box borders
+- Accent colors for highlights: `--red`, `--green`, `--blue`, `--yellow`
+- Surface hierarchy: `--base` (darkest) → `--surface0` → `--surface1` → `--surface2` (lightest backgrounds)
 
 ## Common Issues
 1. **Missing posts in lists**: Run `hugo --cleanDestinationDir` to rebuild
