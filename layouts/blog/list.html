@@ -2,13 +2,15 @@
   <div box-="double round" style="--box-border-color: var(--foreground0);">
     <h2>Blog Posts</h2>
     {{ range .Pages }}
-      <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);">
-        <div class="header">
-          <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
-          <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
+      <a href="{{ .Permalink }}" class="post-card-link">
+        <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
+          <div class="header">
+            <span>{{ .Title }}</span>
+            <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
+          </div>
+          <p>{{ .Summary | truncate 500 }}</p>
         </div>
-        <p>{{ .Summary | truncate 500 }}</p>
-      </div>
+      </a>
     {{ end }}
   </div>
 {{ end }}

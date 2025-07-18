@@ -163,5 +163,21 @@
       color: var(--text) !important;
       background-color: inherit !important;
     }
+
+    /* Post card hover effects */
+    .post-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .post-card-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .post-card-link:hover .post-card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>

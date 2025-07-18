@@ -6,22 +6,24 @@
     {{ $pages = $pages.ByDate.Reverse }}
     <div>
       {{ range first 10 $pages }}
-        <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);">
-          <div class="header">
-            <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
-            {{ if eq .Section "til" }}
-              <span is-="badge" variant-="warning">TIL</span>
-            {{ else }}
-              <span is-="badge" variant-="primary">Blog</span>
-            {{ end }}
-            <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
+        <a href="{{ .Permalink }}" class="post-card-link">
+          <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
+            <div class="header">
+              <span>{{ .Title }}</span>
+              {{ if eq .Section "til" }}
+                <span is-="badge" variant-="warning">TIL</span>
+              {{ else }}
+                <span is-="badge" variant-="primary">Blog</span>
+              {{ end }}
+              <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
+            </div>
+            {{ if eq .Section "blog" }}
+               <p>{{ .Summary | truncate 500 }}</p>
+             {{ else if eq .Section "til" }}
+               <p>{{ .Summary | truncate 250 }}</p>
+             {{ end }}
           </div>
-          {{ if eq .Section "blog" }}
-             <p>{{ .Summary | truncate 500 }}</p>
-           {{ else if eq .Section "til" }}
-             <p>{{ .Summary | truncate 250 }}</p>
-           {{ end }}
-        </div>
+        </a>
       {{ end }}
     </div>
   </div>
