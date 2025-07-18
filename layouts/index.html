@@ -10,18 +10,15 @@
           <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
             <div class="header">
               <span>{{ .Title }}</span>
-              {{ if eq .Section "til" }}
-                <span is-="badge" variant-="warning">TIL</span>
-              {{ else }}
-                <span is-="badge" variant-="primary">Blog</span>
-              {{ end }}
               <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
             </div>
-            {{ if eq .Section "blog" }}
-               <p>{{ .Summary | truncate 500 }}</p>
-             {{ else if eq .Section "til" }}
-               <p>{{ .Summary | truncate 250 }}</p>
-             {{ end }}
+            {{ if eq .Section "til" }}
+              <span is-="badge" variant-="yellow">TIL</span>
+              <p>{{ .Summary | truncate 250 }}</p>
+            {{ else }}
+              <span is-="badge" variant-="green">Blog</span>
+              <p>{{ .Summary | truncate 500 }}</p>
+            {{ end }}
           </div>
         </a>
       {{ end }}

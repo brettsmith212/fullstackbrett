@@ -8,6 +8,7 @@
             <span>{{ .Title }}</span>
             <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
           </div>
+          <span is-="badge" variant-="yellow">TIL</span>
           <p>{{ .Summary | truncate 250 }}</p>
         </div>
       </a>
