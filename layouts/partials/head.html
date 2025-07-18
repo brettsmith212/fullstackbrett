@@ -15,15 +15,70 @@
       --box-border-width: 1px;
       --box-double-border-width: 2px;
     }
+
     .header {
       display: flex;
       justify-content: space-between;
       background-color: var(--background0);
       padding: 0 1ch;
     }
+
     .header span {
       background-color: var(--background0);
       padding: 0 1ch;
+    }
+
+    /* Add proper spacing between elements */
+    article h1,
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6,
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    article h1:first-child,
+    article h2:first-child,
+    article h3:first-child,
+    main h1:first-child,
+    main h2:first-child,
+    main h3:first-child {
+      margin-top: 0;
+    }
+
+    article p,
+    main p {
+      margin-bottom: 1rem;
+    }
+
+    article pre,
+    main pre {
+      margin: 1rem 0;
+    }
+
+    article ul,
+    article ol,
+    main ul,
+    main ol {
+      margin: 1rem 0;
+    }
+
+    article blockquote,
+    main blockquote {
+      margin: 1rem 0;
+    }
+
+    article table,
+    main table {
+      margin: 1rem 0;
     }
   </style>
 </head>
