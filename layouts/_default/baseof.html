@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" data-webtui-theme="catppuccin-mocha">
   {{ partial "head.html" . }}
-  <body>
+  <body style="background-color: var(--background0); color: var(--foreground0); font-family: var(--font-family); padding: 1rem; margin: 0;">
     {{ partial "header.html" . }}
     <main>
       {{ block "main" . }}{{ end }}
