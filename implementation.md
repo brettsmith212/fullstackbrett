@@ -202,7 +202,7 @@
       ```
     - Similarly for footer.html with a badge.
 
-- [ ] Step 5: Enhance Blog Templates
+- [x] Step 5: Enhance Blog Templates
   - **Task**: Refine existing blog templates based on foundation
   - **Description**: Update and enhance the blog list and single page templates to ensure they properly integrate with the unified feed system and maintain consistent Webtui styling, using ASCII boxes for each post card.
   - **Files**:
