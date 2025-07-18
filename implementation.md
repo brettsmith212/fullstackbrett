@@ -100,7 +100,7 @@
       ```
     - Create directories: `mkdir -p content/blog content/til`
 
-- [ ] Step 2: Create Content Archetypes
+- [x] Step 2: Create Content Archetypes
   - **Task**: Set up content templates for rapid blog post and TIL creation
   - **Description**: Create archetype templates to standardize frontmatter and structure for both blog posts and TIL entries, enabling quick content creation with consistent metadata
   - **Files**:
