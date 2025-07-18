@@ -4,9 +4,9 @@
     {{ $pages := union (where .Site.Pages "Section" "blog") (where .Site.Pages "Section" "til") }}
     {{ $pages = where $pages "Kind" "page" }}
     {{ $pages = $pages.ByDate.Reverse }}
-    <ul>
+    <div>
       {{ range first 10 $pages }}
-        <li box-="round" shear-="top" style="--box-border-color: var(--foreground2);">
+        <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);">
           <div class="header">
             <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
             {{ if eq .Section "til" }}
@@ -21,8 +21,8 @@
            {{ else if eq .Section "til" }}
              <p>{{ .Summary | truncate 250 }}</p>
            {{ end }}
-        </li>
+        </div>
       {{ end }}
-    </ul>
+    </div>
   </div>
 {{ end }}
