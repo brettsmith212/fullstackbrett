@@ -179,5 +179,72 @@
     .post-card-link:hover .post-card {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
+
+    /* Code block styling with Catppuccin colors */
+    pre[box-] {
+      margin: 1rem 0;
+      padding: 1rem;
+      background-color: var(--base);
+      color: var(--text);
+      overflow-x: auto;
+      font-family: var(--font-family);
+    }
+    
+    code {
+      color: var(--text);
+      background-color: transparent;
+    }
+    
+    /* Syntax highlighting with Catppuccin colors for all languages */
+    .token.keyword,
+    .token.operator,
+    .token.boolean { color: var(--mauve); }
+    
+    .token.string,
+    .token.char { color: var(--green); }
+    
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata { color: var(--overlay0); }
+    
+    .token.function,
+    .token.function-name,
+    .token.method { color: var(--blue); }
+    
+    .token.number,
+    .token.constant { color: var(--peach); }
+    
+    .token.property,
+    .token.tag,
+    .token.symbol,
+    .token.deleted { color: var(--red); }
+    
+    .token.selector,
+    .token.attr-name,
+    .token.builtin,
+    .token.inserted { color: var(--yellow); }
+    
+    .token.punctuation,
+    .token.bracket { color: var(--text); }
+    
+    .token.class-name,
+    .token.namespace { color: var(--sky); }
+    
+    .token.variable,
+    .token.regex { color: var(--pink); }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-rust.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
 </head>
