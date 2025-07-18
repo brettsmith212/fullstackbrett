@@ -151,7 +151,7 @@
       ```
 
 ## Section-Specific Templates
-- [ ] Step 4: Create TIL Section Templates
+- [x] Step 4: Create TIL Section Templates
   - **Task**: Implement specialized templates for Today I Learned content display
   - **Description**: Create list and single page templates specifically for TIL entries that present them in a concise, scannable format appropriate for short learning items, using ASCII boxes for card-like structures around each entry.
   - **Files**:
