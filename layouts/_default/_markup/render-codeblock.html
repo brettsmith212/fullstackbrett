@@ -1,1 +1,12 @@
-<pre box-="double square" style="--box-border-color: var(--foreground1);"><code class="language-{{ .Type }}">{{ .Inner }}</code></pre>
+<figure class="code-box" box-="double square" style="--box-border-color: var(--foreground1);">
+  <button class="copy-btn" onclick="copyCodeToClipboard(this)" title="Copy to clipboard">
+    <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" stroke="currentColor" stroke-width="2"/>
+      <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" style="display: none;">
+      <polyline points="20,6 9,17 4,12" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </button>
+  <pre><code class="language-{{ .Type }}">{{ .Inner }}</code></pre>
+</figure>
