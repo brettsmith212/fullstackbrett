@@ -1,6 +1,23 @@
 {{ define "main" }}
   <div box-="double round" style="--box-border-color: var(--foreground0);">
-    <h1>Welcome to {{ .Site.Title }}</h1>
-    <p>Terminal-style blog built with Hugo and Webtui CSS.</p>
+    <h2>Recent Updates</h2>
+    {{ $pages := union (where .Site.Pages "Section" "blog") (where .Site.Pages "Section" "til") }}
+    {{ $pages = $pages.ByDate.Reverse }}
+    <ul>
+      {{ range first 10 $pages }}
+        <li box-="round" shear-="top" style="--box-border-color: var(--foreground2);">
+          <div class="header">
+            <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+            {{ if eq .Section "til" }}
+              <span is-="badge" variant-="warning">TIL</span>
+            {{ else }}
+              <span is-="badge" variant-="primary">Blog</span>
+            {{ end }}
+            <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
+          </div>
+          {{ if eq .Section "blog" }}<p>{{ .Summary }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
   </div>
 {{ end }}

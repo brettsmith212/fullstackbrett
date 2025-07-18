@@ -241,7 +241,7 @@
       ```
 
 ## Unified Feed Implementation
-- [ ] Step 6: Create Unified Running Feed
+- [x] Step 6: Create Unified Running Feed
   - **Task**: Implement homepage template that combines blog posts and TIL entries in chronological order
   - **Description**: Create a unified feed that aggregates content from both blog and TIL sections, displaying them in reverse chronological order with clear visual distinction between content types, using individual ASCII box cards for each entry.
   - **Files**:
