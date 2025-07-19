@@ -1,5 +1,5 @@
 ---
-title: "Mastering Python: A Comprehensive Guide"
+title: "Mastering Python: A Comprehensive Guide YO!"
 date: 2025-07-18T14:57:58-07:00
 draft: false
 tags: ["python", "programming", "tutorial"]
@@ -8,6 +8,8 @@ tags: ["python", "programming", "tutorial"]
 Python has become one of the most **popular programming languages** in the world, and for good reason. Its *clean syntax* and powerful capabilities make it perfect for everything from web development to data science.
 
 ## Why Choose Python?
+
+![Python Logo](python.jpg)
 
 Python offers several advantages:
 

@@ -1,9 +1,31 @@
-FROM alpine:3.20 AS builder
+# Stage 1
+FROM alpine:latest AS build
 
-RUN apk add --no-cache hugo
+# Install the Hugo go app.
+RUN apk add --update hugo
 
-WORKDIR /workspace
+WORKDIR /opt/HugoApp
 
+# Copy Hugo config into the container Workdir.
 COPY . .
 
-RUN hugo --minify
+# Build argument for baseURL
+ARG HUGO_BASEURL=http://localhost:3000/
+
+# Run Hugo in the Workdir to generate HTML.
+RUN hugo --baseURL="${HUGO_BASEURL}" 
+
+# Stage 2
+FROM nginx:1.25-alpine
+
+# Copy custom nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Set workdir to the NGINX default dir.
+WORKDIR /usr/share/nginx/html
+
+# Copy HTML from previous build into the Workdir.
+COPY --from=build /opt/HugoApp/public .
+
+# Expose port 80
+EXPOSE 80/tcp
