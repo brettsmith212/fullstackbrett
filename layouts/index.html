@@ -4,7 +4,7 @@
     {{ $pages := union (where .Site.Pages "Section" "blog") (where .Site.Pages "Section" "til") }}
     {{ $pages = where $pages "Kind" "page" }}
     {{ $pages = $pages.ByDate.Reverse }}
-    <div>
+    <div class="posts-grid">
       {{ range first 10 $pages }}
         <a href="{{ .Permalink }}" class="post-card-link">
           <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">

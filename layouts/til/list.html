@@ -1,6 +1,7 @@
 {{ define "main" }}
   <div box-="double round" style="--box-border-color: var(--foreground0);">
     <h2>Today I Learned</h2>
+    <div class="posts-grid">
     {{ range .Pages }}
       <a href="{{ .Permalink }}" class="post-card-link">
         <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
@@ -13,5 +14,6 @@
         </div>
       </a>
     {{ end }}
+    </div>
   </div>
 {{ end }}

@@ -3,11 +3,14 @@
     <div class="header">
       <span>navbar</span>
     </div>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1ch;">
-      <div class="brand">
-        <a href="/" style="text-decoration: none; color: var(--foreground0); font-weight: bold;">fullstackbrett</a>
-      </div>
-      <nav style="display: flex; gap: 0.5rem;">
+    <div class="nav-inner" style="padding: 0.5rem 1ch;">
+      <a href="/" class="brand">fullstackbrett</a>
+      
+      <button id="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        ☰
+      </button>
+      
+      <nav id="nav-links" role="navigation" aria-label="Main navigation">
         {{ range .Site.Menus.main }}
         {{ if eq .Name "Home" }}
         <a href="{{ .URL }}" class="nav-button"><button variant-="blue">{{ .Name }}</button></a>
