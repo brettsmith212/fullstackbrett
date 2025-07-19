@@ -3,13 +3,15 @@
 /* Breakpoints */
 :root {
   --bp-xs: 480px;
-  --bp-sm: 640px; 
+  --bp-sm: 640px;
   --bp-md: 768px;
   --bp-lg: 1024px;
 }
 
 /* Prevent media overflow */
-img, video, iframe {
+img,
+video,
+iframe {
   max-width: 100%;
   height: auto;
 }
@@ -111,14 +113,14 @@ h3 {
 
 #nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
 #nav-links a {
   text-decoration: none;
   color: var(--text);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
@@ -129,37 +131,40 @@ h3 {
 @media (max-width: 640px) {
   #nav-toggle {
     display: block;
-    order: 3; /* Put hamburger on the right */
+    order: 3;
+    /* Put hamburger on the right */
   }
-  
+
   .brand {
-    order: 1; /* Put brand on the left */
+    order: 1;
+    /* Put brand on the left */
   }
-  
+
   #nav-links {
     display: none;
     flex-direction: row;
     width: 100%;
     margin-top: 0.5rem;
     gap: 0;
-    order: 4; /* Nav menu appears below */
+    order: 4;
+    /* Nav menu appears below */
     justify-content: center;
   }
-  
+
   #nav-links.show {
     display: flex;
   }
-  
+
   .nav-inner {
     flex-wrap: wrap;
     align-items: center;
   }
-  
+
   #nav-links a {
     flex: 1;
     text-align: center;
   }
-  
+
   #nav-links button {
     width: 100%;
     font-size: 0.875rem;
@@ -207,7 +212,8 @@ h3 {
 
 .post-card .header span:first-child {
   flex: 1;
-  min-width: 0; /* Allow text to shrink */
+  min-width: 0;
+  /* Allow text to shrink */
 }
 
 .post-card p {
@@ -294,14 +300,16 @@ button:focus {
 
 /* Better tap targets on mobile */
 @media (max-width: 640px) {
-  a, button {
+
+  a,
+  button {
     min-height: 44px;
     min-width: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Exception for text links in paragraphs */
   p a {
     min-height: auto;
