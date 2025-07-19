@@ -39,7 +39,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           DO_HOST: ${{ secrets.DO_HOST }}
           DO_USERNAME: ${{ secrets.DO_USERNAME }}
-          GHCR_PAT_FULLSTACKBRETT ${{ secrets.GHCR_PAT_FULLSTACKBRETT }}
+          GHCR_PAT_FULLSTACKBRETT: ${{ secrets.GHCR_PAT_FULLSTACKBRETT }}
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${DO_USERNAME}@${DO_HOST} <<EOF
