@@ -24,7 +24,15 @@
 
     .header span {
       background-color: var(--background0);
-      padding: 0 1ch;
+      padding: 0 0.5ch;
+    }
+    
+    /* Style the first span in article headers as a title */
+    article .header span:first-child {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--blue);
+      padding-left: 0;
     }
 
     /* Add proper spacing between elements */

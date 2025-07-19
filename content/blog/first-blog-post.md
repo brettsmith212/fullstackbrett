@@ -1,11 +1,9 @@
 ---
-title: "First Blog Post"
+title: "Mastering Python: A Comprehensive Guide"
 date: 2025-07-18T14:57:58-07:00
 draft: false
 tags: ["python", "programming", "tutorial"]
 ---
-
-# Mastering Python: A Comprehensive Guide
 
 Python has become one of the most **popular programming languages** in the world, and for good reason. Its *clean syntax* and powerful capabilities make it perfect for everything from web development to data science.
 

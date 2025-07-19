@@ -1,9 +1,11 @@
 {{ define "main" }}
   <article box-="double round" shear-="top" style="--box-border-color: var(--foreground0);">
     <div class="header">
-      <span><h3>{{ .Title }}</h3></span>  <!-- Smaller heading for TIL -->
+      <span>{{ .Title }}</span>
       <span is-="badge" variant-="secondary">{{ .Date.Format "2006-01-02" }}</span>
     </div>
-    {{ .Content }}
+    <div style="padding: 0 1ch; margin-top: 1rem;">
+      {{ .Content }}
+    </div>
   </article>
 {{ end }}
