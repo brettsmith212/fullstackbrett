@@ -197,6 +197,59 @@ h3 {
 
 /* Post card headers use the global .header styles from head.html */
 
+/* Article content styling for single posts */
+.article-content {
+  padding: 1rem 1ch;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1rem;
+}
+
+.article-content pre {
+  margin: 1rem 0;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.article-content blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--surface0);
+}
+
+.article-content table {
+  margin: 1rem 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.article-content table th,
+.article-content table td {
+  padding: 0.5rem;
+  border: 1px solid var(--surface0);
+}
+
+.article-content table th {
+  background-color: var(--surface0);
+}
+
 .post-card p {
   margin-top: 0.5rem;
   font-size: 0.9rem;
