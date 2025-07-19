@@ -178,43 +178,24 @@ h3 {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
-}
-
-@media (min-width: 640px) {
-  .posts-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .posts-grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  }
+  /* Keep cards stacked on all screen sizes */
 }
 
 /* Better card spacing and mobile optimization */
 .post-card {
-  padding: 1rem;
+  /* Remove padding from shear container */
   transition: transform 0.2s ease;
+}
+
+.card-body {
+  padding: 1rem;
 }
 
 .post-card:hover {
   transform: translateY(-2px);
 }
 
-.post-card .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.post-card .header span:first-child {
-  flex: 1;
-  min-width: 0;
-  /* Allow text to shrink */
-}
+/* Post card headers use the global .header styles from head.html */
 
 .post-card p {
   margin-top: 0.5rem;
