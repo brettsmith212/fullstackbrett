@@ -9,17 +9,16 @@
         <a href="{{ .Permalink }}" class="post-card-link">
           <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
             <div class="header">
-              <span style="color: var(--maroon);"># {{ .Title }}</span>
+              {{ if eq .Section "til" }}
+                <span is-="badge" variant-="yellow">TIL</span>
+              {{ else }}
+                <span is-="badge" variant-="green">Blog</span>
+              {{ end }}
               <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
             </div>
             <div class="card-body">
-              {{ if eq .Section "til" }}
-                <span is-="badge" variant-="yellow">TIL</span>
-                <p>{{ .Summary | truncate 250 }}</p>
-              {{ else }}
-                <span is-="badge" variant-="green">Blog</span>
-                <p>{{ .Summary | truncate 500 }}</p>
-              {{ end }}
+              <h3 style="color: var(--maroon); margin: 0 0 0.5rem 0;">{{ .Title }}</h3>
+              <p>{{ .Summary | truncate 250 }}</p>
             </div>
           </div>
         </a>
