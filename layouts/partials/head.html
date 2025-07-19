@@ -276,6 +276,29 @@
     
     .token.variable,
     .token.regex { color: var(--pink); }
+    
+    /* Fix navigation button active state - more specific selectors */
+    nav button:active,
+    .nav-button button:active,
+    button[variant-]:active,
+    #nav-links button:active {
+      background-color: var(--base) !important;
+      color: var(--text) !important;
+    }
+    
+    /* Also fix any webtui variant button active states */
+    button[variant-="blue"]:active,
+    button[variant-="green"]:active,
+    button[variant-="yellow"]:active,
+    button[variant-="lavender"]:active {
+      color: var(--text) !important;
+    }
+    
+    /* Active page navigation button styling */
+    .nav-button.active button {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
@@ -299,27 +322,36 @@
       const navLinks = document.getElementById('nav-links');
       
       if (navToggle && navLinks) {
+        // Check localStorage for menu state on page load
+        const isMenuOpen = localStorage.getItem('mobileMenuOpen') === 'true';
+        if (isMenuOpen) {
+          navLinks.classList.add('show');
+          navToggle.setAttribute('aria-expanded', 'true');
+          navToggle.textContent = '✕';
+        }
+        
         navToggle.addEventListener('click', function(e) {
           e.preventDefault();
           const expanded = this.getAttribute('aria-expanded') === 'true';
+          const newState = !expanded;
           
-          this.setAttribute('aria-expanded', !expanded);
+          this.setAttribute('aria-expanded', newState);
           navLinks.classList.toggle('show');
+          
+          // Update icon based on state
+          this.textContent = newState ? '✕' : '☰';
+          
+          // Save state to localStorage
+          localStorage.setItem('mobileMenuOpen', newState);
         });
         
-        // Close mobile menu when clicking on a nav link
-        navLinks.addEventListener('click', function(e) {
-          if (e.target.closest('a')) {
-            navLinks.classList.remove('show');
-            navToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-        
-        // Close mobile menu when clicking outside
+        // Close mobile menu when clicking outside (but not on nav links)
         document.addEventListener('click', function(e) {
           if (!e.target.closest('header')) {
             navLinks.classList.remove('show');
             navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.textContent = '☰';
+            localStorage.setItem('mobileMenuOpen', 'false');
           }
         });
       }

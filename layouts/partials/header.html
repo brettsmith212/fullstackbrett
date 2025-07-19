@@ -12,14 +12,19 @@
       
       <nav id="nav-links" role="navigation" aria-label="Main navigation">
         {{ range .Site.Menus.main }}
+        {{ $isActive := false }}
         {{ if eq .Name "Home" }}
-        <a href="{{ .URL }}" class="nav-button"><button variant-="blue">{{ .Name }}</button></a>
+          {{ $isActive = $.IsHome }}
+          <a href="{{ .URL }}" class="nav-button{{ if $isActive }} active{{ end }}"><button variant-="blue">{{ .Name }}</button></a>
         {{ else if eq .Name "Blog" }}
-        <a href="{{ .URL }}" class="nav-button"><button variant-="green">{{ .Name }}</button></a>
+          {{ $isActive = eq $.Section "blog" }}
+          <a href="{{ .URL }}" class="nav-button{{ if $isActive }} active{{ end }}"><button variant-="green">{{ .Name }}</button></a>
         {{ else if eq .Name "TIL" }}
-        <a href="{{ .URL }}" class="nav-button"><button variant-="yellow">{{ .Name }}</button></a>
+          {{ $isActive = eq $.Section "til" }}
+          <a href="{{ .URL }}" class="nav-button{{ if $isActive }} active{{ end }}"><button variant-="yellow">{{ .Name }}</button></a>
         {{ else }}
-        <a href="{{ .URL }}" class="nav-button"><button variant-="lavender">{{ .Name }}</button></a>
+          {{ $isActive = or (eq $.RelPermalink .URL) (eq $.CurrentSection.RelPermalink .URL) }}
+          <a href="{{ .URL }}" class="nav-button{{ if $isActive }} active{{ end }}"><button variant-="lavender">{{ .Name }}</button></a>
         {{ end }}
         {{ end }}
       </nav>

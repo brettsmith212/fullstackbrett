@@ -106,6 +106,15 @@ article pre, main pre { margin: 1rem 0; }
 --base: #1e1e2e;
 --mantle: #181825;
 --crust: #11111b;
+
+--background0: var(--base);
+--background1: var(--surface0);
+--background2: var(--surface1);
+--background3: var(--surface2);
+
+--foreground0: var(--text);
+--foreground1: var(--subtext1);
+--foreground2: var(--overlay2);
 ```
 
 **Usage Examples**:
