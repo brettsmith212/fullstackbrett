@@ -10,7 +10,7 @@ WORKDIR /opt/HugoApp
 COPY . .
 
 # Build argument for baseURL
-ARG HUGO_BASEURL=http://localhost:3000/
+ARG HUGO_BASEURL=https://fullstackbrett.com/
 
 # Run Hugo in the Workdir to generate HTML.
 RUN hugo --baseURL="${HUGO_BASEURL}" 
