@@ -327,7 +327,7 @@
         if (isMenuOpen) {
           navLinks.classList.add('show');
           navToggle.setAttribute('aria-expanded', 'true');
-          navToggle.textContent = '✕';
+          navToggle.textContent = '×';
         }
         
         navToggle.addEventListener('click', function(e) {
@@ -339,7 +339,7 @@
           navLinks.classList.toggle('show');
           
           // Update icon based on state
-          this.textContent = newState ? '✕' : '☰';
+          this.textContent = newState ? '×' : '☰';
           
           // Save state to localStorage
           localStorage.setItem('mobileMenuOpen', newState);

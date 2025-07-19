@@ -102,9 +102,19 @@ h3 {
   background: none;
   border: 1px solid var(--surface0);
   color: var(--text);
-  padding: 0.5rem;
   cursor: pointer;
   border-radius: 4px;
+  
+  /* Fix vertical stretching - but keep hidden on desktop */
+  min-height: 0;
+  min-width: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 #nav-toggle:hover {
@@ -130,7 +140,7 @@ h3 {
 /* Mobile navigation */
 @media (max-width: 640px) {
   #nav-toggle {
-    display: block;
+    display: flex;
     order: 3;
     /* Put hamburger on the right */
   }
