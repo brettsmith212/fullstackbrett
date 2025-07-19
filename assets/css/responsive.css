@@ -207,6 +207,15 @@ h3 {
 
 /* Post card headers use the global .header styles from head.html */
 
+/* Truncate long post card titles with ellipsis */
+.post-card .header span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+  flex-shrink: 1;
+}
+
 /* Article content styling for single posts */
 .article-content {
   padding: 1rem 1ch;
