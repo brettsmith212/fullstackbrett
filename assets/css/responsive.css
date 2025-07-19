@@ -24,8 +24,6 @@ iframe {
 table {
   max-width: 100%;
   overflow-x: auto;
-  display: block;
-  white-space: nowrap;
 }
 
 pre {
@@ -253,17 +251,7 @@ h1 {
 .article-content table {
   margin: 1rem 0;
   width: 100%;
-  border-collapse: collapse;
-}
-
-.article-content table th,
-.article-content table td {
-  padding: 0.5rem;
-  border: 1px solid var(--surface0);
-}
-
-.article-content table th {
-  background-color: var(--surface0);
+  /* Let WebTui handle table styling */
 }
 
 .post-card p {
