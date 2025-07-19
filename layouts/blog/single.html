@@ -1,6 +1,6 @@
 {{ define "main" }}
   <article box-="double round" shear-="top" style="--box-border-color: var(--foreground0);">
-    <div class="header">
+    <div class="header" style="flex-direction: column; align-items: flex-start; gap: 0.25rem;">
       <span>{{ .Title }}</span>
       <span is-="badge" variant-="secondary">{{ .Date.Format "2006-01-02" }}</span>
     </div>
