@@ -3,8 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        HUGO_BASEURL: http://localhost:3000/
     container_name: fullstackbrett-blog
     ports:
       - "3000:80"
