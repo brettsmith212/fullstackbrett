@@ -9,7 +9,10 @@ WORKDIR /opt/HugoApp
 # Copy Hugo config into the container Workdir.
 COPY . .
 
-# Build argument for baseURL
+# Build argument for baseURL (DEVELOPMENT)
+# ARG HUGO_BASEURL=/
+
+# Build argument for baseURL (PRODUCTION)
 ARG HUGO_BASEURL=https://fullstackbrett.com/
 
 # Run Hugo in the Workdir to generate HTML.
