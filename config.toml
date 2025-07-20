@@ -2,6 +2,11 @@ baseURL = "http://localhost:1313/"
 languageCode = "en-us"
 title = "My Terminal Blog"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [menu]
   [[menu.main]]
     name = "Home"

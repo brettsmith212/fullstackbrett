@@ -12,14 +12,14 @@ Visit http://localhost:1313 to view your blog.
 
 ### Create new content
 
-**Blog post:**
+**Blog post (organized by date):**
 ```bash
-hugo new blog/my-post-title.md
+hugo new blog/2025/07/my-post-title/index.md
 ```
 
-**TIL (Today I Learned) entry:**
+**TIL entry:**
 ```bash
-hugo new til/what-i-learned.md
+hugo new til/2025/07/what-i-learned.md
 ```
 
 ### Content workflow
@@ -57,11 +57,11 @@ hugo server --buildDrafts
 
 ### 3. Content Creation Process
 ```bash
-# Create new blog post
-hugo new blog/post-name.md
+# Create new blog post (organized by date folders)
+hugo new blog/2025/07/post-name/index.md
 
 # Create new TIL entry
-hugo new til/til-name.md
+hugo new til/2025/07/til-name.md
 ```
 
 ### 4. Content Development Cycle
@@ -92,10 +92,33 @@ hugo --cleanDestinationDir --minify
 
 ### 7. Key Commands Reference
 - `hugo server` - Start development server
-- `hugo new <type>/<name>.md` - Create new content
+- `hugo new blog/YYYY/MM/post-name/index.md` - Create new blog post
+- `hugo new til/YYYY/MM/til-name.md` - Create new TIL entry
 - `hugo --cleanDestinationDir` - Clean rebuild
 - `hugo --buildDrafts` - Include draft content
 - `hugo --minify` - Minified production build
+
+## Working with Images
+
+### Adding Images to Blog Posts
+
+For blog posts using the `index.md` structure, place images in the same folder:
+
+```
+content/blog/2025/07/my-post/
+├── index.md
+└── my-image.jpg
+```
+
+**In your markdown, use absolute paths:**
+```markdown
+<img src="/blog/2025/07/my-post/my-image.jpg" alt="Description" style="width: 300px; height: auto;">
+```
+
+**Why absolute paths?** This ensures images display correctly in:
+- Individual post pages
+- Homepage preview cards
+- Blog listing pages
 
 ## Features
 - Terminal-style UI with ASCII box borders

@@ -16,7 +16,7 @@ COPY . .
 ARG HUGO_BASEURL=https://fullstackbrett.com/
 
 # Run Hugo in the Workdir to generate HTML.
-RUN hugo --baseURL="${HUGO_BASEURL}" 
+RUN hugo --cleanDestinationDir --baseURL="${HUGO_BASEURL}" 
 
 # Stage 2
 FROM nginx:1.25-alpine

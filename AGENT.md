@@ -6,8 +6,38 @@ Terminal-styled blog using Hugo + Webtui CSS + Catppuccin theme. Supports blog p
 ## Key Commands
 - **Dev server**: `hugo server --bind 0.0.0.0 --port 1313`
 - **Build**: `hugo --cleanDestinationDir`
-- **New blog post**: `hugo new blog/post-name.md`
-- **New TIL**: `hugo new til/til-name.md`
+- **New blog post**: `hugo new blog/YYYY/MM/post-name/index.md`
+- **New TIL**: `hugo new til/YYYY/MM/til-name.md`
+
+## Content Creation Conventions
+
+### Blog Posts Structure
+- **Format**: `hugo new blog/YYYY/MM/post-title/index.md`
+- **Organization**: Date-organized folders (e.g., `blog/2025/07/my-post/`)
+- **Benefits**: Clean organization, allows co-located images
+
+### TIL Structure  
+- **Format**: `hugo new til/YYYY/MM/til-title.md`
+- **Organization**: Date-organized files in til directory
+
+### Image Handling
+**For blog posts with index.md structure:**
+```
+content/blog/2025/07/my-post/
+├── index.md
+└── image.jpg
+```
+
+**Always use absolute paths in markdown:**
+```html
+<img src="/blog/2025/07/my-post/image.jpg" alt="Description" style="width: 300px; height: auto;">
+```
+
+**Why absolute paths?**
+- Works correctly in homepage preview cards
+- Works in blog listing pages  
+- Works on individual post pages
+- Prevents broken images across different contexts
 
 ## Critical Fixes Applied
 

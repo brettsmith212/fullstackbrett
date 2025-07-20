@@ -9,7 +9,7 @@ Python has become one of the most **popular programming languages** in the world
 
 ## Why Choose Python?
 
-![Python Logo](python.jpg)
+<img src="/blog/2025/07/first-post/python.jpg" alt="Python Logo" style="width: 300px; height: auto;">
 
 Python offers several advantages:
 
