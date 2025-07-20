@@ -1,6 +1,6 @@
 baseURL = "http://localhost:1313/"
 languageCode = "en-us"
-title = "My Terminal Blog"
+title = "FullStackBrett"
 
 [markup]
   [markup.goldmark]

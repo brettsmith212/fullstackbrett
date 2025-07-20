@@ -256,6 +256,12 @@
       display: block;
     }
 
+    /* Override WebTUI's 44px minimum touch target for copy button */
+    .copy-btn {
+      min-width: var(--copy-btn-size) !important;
+      min-height: var(--copy-btn-size) !important;
+    }
+
     /* Syntax highlighting with Catppuccin colors for all languages */
     .token.keyword,
     .token.operator,
@@ -378,7 +384,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-rust.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>

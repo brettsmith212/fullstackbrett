@@ -1,4 +1,4 @@
-# Terminal Blog
+# FullStackBrett
 
 A terminal-style blog built with Hugo, Webtui CSS, and Catppuccin theme.
 
