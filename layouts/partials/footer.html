@@ -3,9 +3,21 @@
     <div class="header">
       <span>footer</span>
     </div>
-    <div class="footer-inner" style="padding: 0.5rem 1ch;">
-      <span style="color: var(--text);">fullstackbrett</span>
-      <div style="background-color: var(--green); color: var(--base); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.875rem;">
+    <div class="footer-inner" style="padding: 0.5rem 1ch; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+      <a href="/" class="brand" style="order: 1;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" style="vertical-align: middle; margin-right: 0.5ch;">
+          <!-- Background rectangle -->
+          <rect x="1" y="1" width="30" height="30" rx="4" fill="#1e1e2e" stroke="#89b4fa" stroke-width="2"/>
+          
+          <!-- Greater than symbol (>) -->
+          <path d="M9 11 L15 16 L9 21" stroke="#89b4fa" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          
+          <!-- Dash symbol (-) -->
+          <line x1="19" y1="16" x2="25" y2="16" stroke="#cba6f7" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        fullstackbrett
+      </a>
+      <div style="background-color: var(--green); color: var(--base); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.875rem; order: 2;">
         <a href="https://gohugo.io/" target="_blank" style="color: var(--base); text-decoration: underline;">Hugo</a> + <a href="https://webtui.ironclad.sh/" target="_blank" style="color: var(--base); text-decoration: underline;">WebTui</a>
       </div>
     </div>

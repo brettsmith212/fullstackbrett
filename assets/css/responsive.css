@@ -336,22 +336,15 @@ button:focus {
   top: 6px;
 }
 
-/* Better tap targets on mobile */
+/* Better tap targets on mobile - scope to header only */
 @media (max-width: 640px) {
 
-  a,
-  button {
+  header a,
+  header button {
     min-height: 44px;
     min-width: 44px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  }
-
-  /* Exception for text links in paragraphs */
-  p a {
-    min-height: auto;
-    min-width: auto;
-    display: inline;
   }
 }

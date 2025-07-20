@@ -336,6 +336,19 @@
       text-underline-offset: 3px;
     }
 
+    /* Brand logo + text hover effect */
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    .brand:hover {
+      transform: translateY(-1px);
+    }
+
     /* Fix badge alignment in stacked headers */
     .header span[is-="badge"] {
       padding-left: 0 !important;
@@ -348,6 +361,13 @@
 
     main {
       margin-bottom: 1.5rem;
+    }
+
+    /* Ensure consistent footer button padding across all screen sizes */
+    .footer-inner div {
+      padding: 0.25rem 0.5rem !important;
+      min-height: auto !important;
+      font-size: 0.875rem !important;
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
