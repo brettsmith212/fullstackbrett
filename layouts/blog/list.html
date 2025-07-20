@@ -11,7 +11,7 @@
           </div>
           <div class="card-body">
             <h3 style="color: var(--maroon); margin: 0 0 0.5rem 0;">{{ .Title }}</h3>
-            <p>{{ .Summary | truncate 500 }}</p>
+            <article>{{ .Content | truncate 500 }}</article>
           </div>
         </div>
       </a>
