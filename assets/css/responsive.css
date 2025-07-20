@@ -289,26 +289,7 @@ h1 {
   padding: clamp(0.75rem, 2vw, 1rem);
 }
 
-.copy-btn {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: var(--surface0);
-  border: 1px solid var(--surface1);
-  color: var(--text);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
 
-@media (max-width: 480px) {
-  .copy-btn {
-    top: 0.25rem;
-    right: 0.25rem;
-    padding: 0.2rem 0.4rem;
-  }
-}
 
 /* ===== ACCESSIBILITY IMPROVEMENTS ===== */
 
