@@ -3,7 +3,8 @@
     <h2>Blog Posts</h2>
     <div class="posts-grid">
     {{ range .Pages }}
-      <a href="{{ .Permalink }}" class="post-card-link">
+      <div class="post-card-wrapper">
+        <a href="{{ .Permalink }}" class="post-card-overlay" aria-label="Read full post: {{ .Title }}"></a>
         <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
           <div class="header">
             <span is-="badge" variant-="green">Blog</span>
@@ -14,7 +15,7 @@
             <article>{{ .Content | truncate 500 }}</article>
           </div>
         </div>
-      </a>
+      </div>
     {{ end }}
     </div>
   </div>

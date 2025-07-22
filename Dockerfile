@@ -1,8 +1,15 @@
 # Stage 1
-FROM alpine:latest AS build
+FROM alpine:3.20 AS build
 
-# Install the Hugo go app.
-RUN apk add --update hugo
+# Install dependencies required for Hugo
+RUN apk add --no-cache wget tar
+
+# Download and install Hugo v0.148.1
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.148.1/hugo_0.148.1_Linux-64bit.tar.gz && \
+    tar -xzf hugo_0.148.1_Linux-64bit.tar.gz && \
+    mv hugo /usr/local/bin/ && \
+    chmod +x /usr/local/bin/hugo && \
+    rm hugo_0.148.1_Linux-64bit.tar.gz
 
 WORKDIR /opt/HugoApp
 
@@ -10,25 +17,25 @@ WORKDIR /opt/HugoApp
 COPY . .
 
 # Build argument for baseURL (DEVELOPMENT)
-# ARG HUGO_BASEURL=/
+ARG HUGO_BASEURL=/
 
 # Build argument for baseURL (PRODUCTION)
-ARG HUGO_BASEURL=https://fullstackbrett.com/
+# ARG HUGO_BASEURL=https://fullstackbrett.com/
 
 # Run Hugo in the Workdir to generate HTML.
 RUN hugo --cleanDestinationDir --baseURL="${HUGO_BASEURL}" 
 
 # Stage 2
-FROM nginx:1.25-alpine
+FROM python:3.12-alpine
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Set workdir to the NGINX default dir.
-WORKDIR /usr/share/nginx/html
+# Set workdir for the Python server.
+WORKDIR /app
 
 # Copy HTML from previous build into the Workdir.
 COPY --from=build /opt/HugoApp/public .
 
 # Expose port 3000
 EXPOSE 3000/tcp
+
+# Run the Python HTTP server on port 3000
+CMD ["python", "-m", "http.server", "3000"]

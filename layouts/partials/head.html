@@ -183,20 +183,19 @@
 
 
 
-    /* Post card hover effects */
-    .post-card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: transform 0.2s ease;
+    /* Post card hover effects - moved to post-card-wrapper */
+
+    /* Prevent skewed cards with wide code blocks from widening the page */
+    .post-card-wrapper {
+      max-width: 100%;
+      overflow: hidden;
     }
 
-    .post-card-link:hover {
-      transform: translateY(-2px);
-    }
-
-    .post-card-link:hover .post-card {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    .post-card {
+      overflow: hidden;
+      max-width: 100%;
+      min-width: 0;
+      /* Allow flex/grid items to shrink below content size */
     }
 
     /* Code block styling with Catppuccin colors */
@@ -214,6 +213,8 @@
       overflow-x: auto;
       white-space: pre;
       font-family: var(--font-family);
+      width: 100%;
+      max-width: 100%;
     }
 
     code {
@@ -319,6 +320,31 @@
     .token.variable,
     .token.regex {
       color: var(--pink);
+    }
+
+    /* Post card overlay for fixing nested link issues */
+    .post-card-wrapper {
+      position: relative;
+      display: block;
+    }
+
+    .post-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .post-card-wrapper:hover .post-card {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .post-card {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     /* Fix navigation button active state - more specific selectors */

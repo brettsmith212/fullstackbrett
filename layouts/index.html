@@ -6,7 +6,8 @@
     {{ $pages = $pages.ByDate.Reverse }}
     <div class="posts-grid">
       {{ range first 10 $pages }}
-        <a href="{{ .Permalink }}" class="post-card-link">
+        <div class="post-card-wrapper">
+          <a href="{{ .Permalink }}" class="post-card-overlay" aria-label="Read full post: {{ .Title }}"></a>
           <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
             <div class="header">
               {{ if eq .Section "til" }}
@@ -27,7 +28,7 @@
               {{ end }}
             </div>
           </div>
-        </a>
+        </div>
       {{ end }}
     </div>
   </div>
