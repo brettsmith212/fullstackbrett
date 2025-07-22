@@ -1,35 +1,35 @@
 {{ define "main" }}
-  <div box-="double round" style="--box-border-color: var(--foreground0);">
-    <h2>Recent Updates</h2>
-    {{ $pages := union (where .Site.Pages "Section" "blog") (where .Site.Pages "Section" "til") }}
-    {{ $pages = where $pages "Kind" "page" }}
-    {{ $pages = $pages.ByDate.Reverse }}
-    <div class="posts-grid">
-      {{ range first 10 $pages }}
-        <div class="post-card-wrapper">
-          <a href="{{ .Permalink }}" class="post-card-overlay" aria-label="Read full post: {{ .Title }}"></a>
-          <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
-            <div class="header">
-              {{ if eq .Section "til" }}
-                <span is-="badge" variant-="yellow">TIL</span>
-              {{ else }}
-                <span is-="badge" variant-="green">Blog</span>
-              {{ end }}
-              <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
-            </div>
-            <div class="card-body">
-              <h3 style="color: var(--maroon); margin: 0 0 0.5rem 0;">{{ .Title }}</h3>
-              {{ if eq .Section "til" }}
-                <article>
-                  {{ .Content }}
-                </article>
-              {{ else }}
-                <article>{{ .Content | truncate 500 }}</article>
-              {{ end }}
-            </div>
-          </div>
+<div box-="double round" style="--box-border-color: var(--foreground0);">
+  <h2>Recent Updates</h2>
+  {{ $pages := union (where .Site.Pages "Section" "blog") (where .Site.Pages "Section" "til") }}
+  {{ $pages = where $pages "Kind" "page" }}
+  {{ $pages = $pages.ByDate.Reverse }}
+  <div class="posts-grid">
+    {{ range first 10 $pages }}
+    <div class="post-card-wrapper">
+      <a href="{{ .Permalink }}" class="post-card-overlay" aria-label="Read full post: {{ .Title }}"></a>
+      <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
+        <div class="header">
+          {{ if eq .Section "til" }}
+          <span is-="badge" variant-="yellow">TIL</span>
+          {{ else }}
+          <span is-="badge" variant-="green">Blog</span>
+          {{ end }}
+          <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
         </div>
-      {{ end }}
+        <div class="card-body">
+          <h3 style="color: var(--maroon); margin: 0 0 0.5rem 0;">{{ .Title }}</h3>
+          {{ if eq .Section "til" }}
+          <article>
+            {{ .Content | truncate 250 }}
+          </article>
+          {{ else }}
+          <article>{{ .Content | truncate 250 }}</article>
+          {{ end }}
+        </div>
+      </div>
     </div>
+    {{ end }}
   </div>
+</div>
 {{ end }}

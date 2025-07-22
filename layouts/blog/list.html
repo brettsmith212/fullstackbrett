@@ -1,22 +1,22 @@
 {{ define "main" }}
-  <div box-="double round" style="--box-border-color: var(--foreground0);">
-    <h2>Blog Posts</h2>
-    <div class="posts-grid">
+<div box-="double round" style="--box-border-color: var(--foreground0);">
+  <h2>Blog Posts</h2>
+  <div class="posts-grid">
     {{ range .Pages }}
-      <div class="post-card-wrapper">
-        <a href="{{ .Permalink }}" class="post-card-overlay" aria-label="Read full post: {{ .Title }}"></a>
-        <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
-          <div class="header">
-            <span is-="badge" variant-="green">Blog</span>
-            <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
-          </div>
-          <div class="card-body">
-            <h3 style="color: var(--maroon); margin: 0 0 0.5rem 0;">{{ .Title }}</h3>
-            <article>{{ .Content | truncate 500 }}</article>
-          </div>
+    <div class="post-card-wrapper">
+      <a href="{{ .Permalink }}" class="post-card-overlay" aria-label="Read full post: {{ .Title }}"></a>
+      <div box-="round" shear-="top" style="--box-border-color: var(--foreground2);" class="post-card">
+        <div class="header">
+          <span is-="badge" variant-="green">Blog</span>
+          <span is-="badge" variant-="info">{{ .Date.Format "2006-01-02" }}</span>
+        </div>
+        <div class="card-body">
+          <h3 style="color: var(--maroon); margin: 0 0 0.5rem 0;">{{ .Title }}</h3>
+          <article>{{ .Content | truncate 250 }}</article>
         </div>
       </div>
-    {{ end }}
     </div>
+    {{ end }}
   </div>
+</div>
 {{ end }}
