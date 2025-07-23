@@ -1,6 +1,6 @@
 ---
 title: "uv tips"
-date: 2025-07-21T20:54:08-07:00
+date: 2025-07-21
 til: true
 tags: []
 ---

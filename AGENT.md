@@ -155,7 +155,21 @@ article pre, main pre { margin: 1rem 0; }
 - Accent colors for highlights: `--red`, `--green`, `--blue`, `--yellow`
 - Surface hierarchy: `--base` (darkest) → `--surface0` → `--surface1` → `--surface2` (lightest backgrounds)
 
+## Shortcodes for Content Enhancement
+
+### Color Shortcode
+Apply Catppuccin colors to text:
+```markdown
+{{< color "blue" >}}highlighted text{{< /color >}}
+{{< color "red" >}}error message{{< /color >}}
+{{< color "green" >}}success message{{< /color >}}
+{{< color "yellow" >}}warning text{{< /color >}}
+```
+
+**Note**: Shortcode uses aggressive whitespace trimming to prevent spacing issues around punctuation.
+
 ## Common Issues
 1. **Missing posts in lists**: Run `hugo --cleanDestinationDir` to rebuild
 2. **Broken shearing**: Check header CSS - spans need background, div doesn't
 3. **Code indentation**: Ensure no whitespace in render-codeblock.html template
+4. **Shortcode spacing**: Use `{{<` syntax (no spaces) for tight text flow

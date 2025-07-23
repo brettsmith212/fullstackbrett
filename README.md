@@ -120,8 +120,27 @@ content/blog/2025/07/my-post/
 - Homepage preview cards
 - Blog listing pages
 
+## Content Shortcodes
+
+### Color Text
+Add colored text using Catppuccin theme colors:
+
+```markdown
+{{< color "yellow" >}}highlighted text{{< /color >}}
+{{< color "red" >}}important warning{{< /color >}}
+{{< color "green" >}}success message{{< /color >}}
+{{< color "blue" >}}informational text{{< /color >}}
+```
+
+**Available colors:**
+- `rosewater`, `flamingo`, `pink`, `mauve`
+- `red`, `maroon`, `peach`, `yellow`  
+- `green`, `teal`, `sky`, `sapphire`
+- `blue`, `lavender`
+
 ## Features
 - Terminal-style UI with ASCII box borders
 - Unified homepage feed combining blog posts and TIL entries
 - Automatic code block and image styling
 - Responsive design with Catppuccin color scheme
+- Color text shortcodes for highlighting content
