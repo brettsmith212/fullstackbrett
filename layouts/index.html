@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div box-="double round" style="--box-border-color: var(--foreground0);">
-  <h2>Recent Updates</h2>
+  <h2>Recent Updates Test</h2>
   {{ $pages := union (where .Site.Pages "Section" "blog") (where .Site.Pages "Section" "til") }}
   {{ $pages = where $pages "Kind" "page" }}
   {{ $pages = $pages.ByDate.Reverse }}
